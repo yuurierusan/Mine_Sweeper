@@ -38,8 +38,7 @@
 
 ### **_Screenshots_**
 
-![Image](https://wallpapercave.com/wp/wp7199912.jpg)
-![Image](https://img1.ak.crunchyroll.com/i/spire2/d29e21bbc3935490c940163454035af91532415242_fwide.jpg)
+![Image](https://cdn.mos.cms.futurecdn.net/f873f2282e16faeebdb4a09e2f3cef32-1920-80.jpg.webp)
 
 ---
 
