@@ -1,5 +1,8 @@
 # Mine_Sweeper
 
+![GitHub last commit](https://img.shields.io/github/last-commit/yuurierusan/Mine_Sweeper)
+![GitHub repo file count](https://img.shields.io/github/directory-file-count/yuurierusan/Mine_Sweeper)
+
 ## Date: 01/20/2023
 
 ### By: Jonshea Nutson
