@@ -55,6 +55,8 @@
 -   [ ] Have numbers appear in the grid tiles in relation to how far the bomb is from the players choice
 -   [ ] Have tiles change color depending on which tile is clicked and if its a bomb or a number
 
+### \***_Future_Features_\***
+
 ### **_Credits_**
 
 ## Markdown Guide: [General Assembly](https://github.com/yuurierusan/u1_hw_markdown)
