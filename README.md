@@ -1,4 +1,4 @@
-# Mine_Sweeper
+# MineSweeper
 
 ## Date: 01/20/2023
 
