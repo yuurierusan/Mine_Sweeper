@@ -1,5 +1,3 @@
-# Mine_Sweeper
-
 ![Image](./%F0%9F%92%A3Mine_Sweeper%F0%9F%92%A3.png)
 ![GitHub last commit](https://img.shields.io/github/last-commit/yuurierusan/Mine_Sweeper)
 ![GitHub repo file count](https://img.shields.io/github/directory-file-count/yuurierusan/Mine_Sweeper)
