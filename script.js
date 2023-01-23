@@ -15,14 +15,17 @@ const makeBoard = () => {
         }
         board.push(row)
     }
-    console.log(board)
 }
+
 // status
 const numberOfMines = 10
+const mineStatus = () => {
+    document.querySelector('#mines').innerHTML = numberOfMines
+}
 
-// be able to click board tiles
+// be able to click board cells
 
-// be able to add flags to tiles on click
+// be able to add flags to cells on click
 
 // populate board with mines
 const minePosition = []
@@ -34,7 +37,7 @@ const minePosition = []
 
 // start game
 const startGame = () => {
-    document.querySelector('#mines').innerHTML = numberOfMines
+    mineStatus()
     makeBoard()
 }
 
