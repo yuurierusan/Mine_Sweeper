@@ -24,11 +24,10 @@ body {
 .grid {
     width: 520px;
     height: 520px;
-    border: 1px solid black;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-left: 35%;
+    margin-left: 20%;
 }
 
 /* cells to click in game */
@@ -36,12 +35,11 @@ div {
     width: 50px;
     height: 50px;
     display: flex;
-    border: 1px solid black;
-    background-color: #CCC;
+    border: 1px solid #ccc;
+    background-color: darkgray;
 }
 
 /* hover */
-div:hover{
-    background-color: rgba(0, 0, 0, .3);
+div:hover {
+    background-color: rgba(0, 0, 0, 0.3);
 }
-.onCellClick

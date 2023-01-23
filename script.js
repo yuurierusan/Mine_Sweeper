@@ -15,6 +15,7 @@ const makeBoard = () => {
         }
         board.push(row)
     }
+    console.log(board)
 }
 
 // status
