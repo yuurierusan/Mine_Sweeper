@@ -30,7 +30,7 @@
 
 ### **_Getting Started_**
 
-##### Once the game is complete you'll be able to access and play it [here](Minesweeper.surge.sh)
+##### Once the game is complete you'll be able to access and play it [here](Minesweeper.surge.sh).
 
 ##### A Trello board was used to keep track of development progress and can be viewed [here](https://trello.com/invite/b/Mj5DHgBr/ATTIb4dc15ec67bb081751fae57d9b1b95890E937067/minesweeper).
 
@@ -44,7 +44,7 @@
 
 ---
 
-### \***_Task List_**
+### **_Task List_**
 
 -   [ ] Build a browser-based game utilizing HTML/CSS/JavaScript
 -   [ ] Include 2 HTML pages
@@ -55,7 +55,11 @@
 -   [ ] Have numbers appear in the grid tiles in relation to how far the bomb is from the players choice
 -   [ ] Have tiles change color depending on which tile is clicked and if its a bomb or a number
 
-### \***_Future_Features_\***
+---
+
+### **_Future Features_**
+
+---
 
 ### **_Credits_**
 
