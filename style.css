@@ -4,30 +4,44 @@
     padding: 0;
 }
 
+/* align all text center */
 body {
     text-align: center;
+    background-image: url('./Graffiti\ Wall\ Texture\ Free\ Download.png');
 }
 
+/*title styling */
 .title {
     padding: 25px;
 }
 
+/* mine bomb status text */
 .status {
     padding: 5px 0 20px;
 }
 
+/* game container */
 .grid {
     width: 520px;
     height: 520px;
     border: 1px solid black;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 35%;
 }
 
+/* cells to click in game */
 div {
     width: 50px;
     height: 50px;
     display: flex;
     border: 1px solid black;
-    background-color: bisque;
+    background-color: #CCC;
 }
+
+/* hover */
+div:hover{
+    background-color: rgba(0, 0, 0, .3);
+}
+.onCellClick

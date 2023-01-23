@@ -26,6 +26,12 @@ const mineStatus = () => {
 // be able to click board cells
 
 // be able to add flags to cells on click
+// const cell = this
+// cell.addEventListener('contextmenu', (toggleFlag) => {})
+// oncontextmenu = (toggleFlag) => {
+//     if (cell.innerHTML === '') return (cell.innerHTML = '🚩')
+//     return (cell.innerHTML = '')
+// }
 
 // populate board with mines
 const minePosition = []
