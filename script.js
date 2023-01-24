@@ -1,21 +1,40 @@
-// game logic
-
-//make a board
+// variables
 const board = []
 const rows = 10
 const columns = 10
+const mines = 15
+
+// create bombs
+const mineField = Array(mines).fill(`mine`)
+const safePlain = Array(100 - mines).fill(`safe`)
+const combinedArray = safePlain.concat(mineField)
+for (let i = combinedArray.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1))
+    let temp = combinedArray[i]
+    combinedArray[i] = combinedArray[j]
+    combinedArray[j] = temp
+}
+
+let counter = 0
 const makeBoard = () => {
     for (let x = 0; x < rows; x++) {
         let row = []
         for (let y = 0; y < columns; y++) {
             let cell = document.createElement('div')
             cell.id = x.toString() + '-' + y.toString()
+            const random = Math.floor(Math.random() * 100)
+
+            if (combinedArray[random] === `mine`) {
+                counter++
+            }
+            if (counter <= 10) {
+                cell.classList.add(combinedArray[random])
+            }
             document.querySelector('.grid').append(cell)
             row.push(cell)
         }
         board.push(row)
     }
-    console.log(board)
 }
 
 // status
