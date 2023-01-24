@@ -4,7 +4,7 @@ const rows = 10
 const columns = 10
 const mines = 15
 
-// create bombs
+// create random bombs
 const mineField = Array(mines).fill(`mine`)
 const safePlain = Array(100 - mines).fill(`safe`)
 const combinedArray = safePlain.concat(mineField)
@@ -39,7 +39,8 @@ const makeBoard = () => {
 
 // status
 const numberOfMines = 10
-const mineStatus = () => {
+const statusText = ``
+const gameStatus = () => {
     document.querySelector('#mines').innerHTML = numberOfMines
 }
 
@@ -58,12 +59,16 @@ const minePosition = []
 // populate numbers in correspondence to mines
 
 // check for win/lose
+const gameOver = (click) => {
+    if (cell.classList.contains('mine'))
+        return (statusText.innerHTML = `You hit a mine! Game Over!`)
+}
 
 // reset button
 
 // start game
 const startGame = () => {
-    mineStatus()
+    gameStatus()
     makeBoard()
 }
 
