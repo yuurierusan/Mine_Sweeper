@@ -34,7 +34,7 @@
 
 ##### A Trello board was used to keep track of development progress and can be viewed [here](https://trello.com/invite/b/Mj5DHgBr/ATTIb4dc15ec67bb081751fae57d9b1b95890E937067/minesweeper).
 
-##### The project itself was deployed and can be viewed [here](TBA).
+##### The project itself was deployed and can be viewed [here](mine_sweeper.surge.sh).
 
 ---
 
