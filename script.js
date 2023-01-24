@@ -1,42 +1,33 @@
-// variables
-const board = []
-const rows = 10
-const columns = 10
-const mines = 15
-
-// create random bombs
-const mineField = Array(mines).fill(`mine`)
-const safePlain = Array(100 - mines).fill(`safe`)
-const combinedArray = safePlain.concat(mineField)
-for (let i = combinedArray.length - 1; i > 0; i--) {
-    let j = Math.floor(Math.random() * (i + 1))
-    let temp = combinedArray[i]
-    combinedArray[i] = combinedArray[j]
-    combinedArray[j] = temp
+const grid = document.querySelector('.grid')
+let randomIdx = {}
+let randomArr = []
+function makeBoard() {
+    for (let x = 0; x < 10; x++) {
+        for (let y = 0; y < 10; y++) {
+            const cell = document.createElement('div')
+            cell.id = x.toString() + '-' + y.toString()
+            grid.append(cell)
+        }
+    }
+    randomizeClasses()
 }
 
-let counter = 0
-const makeBoard = () => {
-    for (let x = 0; x < rows; x++) {
-        let row = []
-        for (let y = 0; y < columns; y++) {
-            let cell = document.createElement('div')
-            cell.id = x.toString() + '-' + y.toString()
-            const random = Math.floor(Math.random() * 100)
+function randomizeClasses() {
+    while (true) {
+        const random = Math.floor(Math.random() * 100)
+        randomIdx[random] = true
+        randomArr = Object.keys(randomIdx)
+        if (randomArr.length == 10) break
+    }
 
-            if (combinedArray[random] === `mine`) {
-                counter++
-            }
-            if (counter <= 10) {
-                cell.classList.add(combinedArray[random])
-            }
-            document.querySelector('.grid').append(cell)
-            row.push(cell)
+    for (let i = 0; i < 100; i++) {
+        if (randomIdx[i] == true) {
+            grid.children[i].classList.add('mine')
+        } else {
+            grid.children[i].classList.add('safe')
         }
-        board.push(row)
     }
 }
-
 // status
 const numberOfMines = 10
 const statusText = ``
@@ -54,8 +45,6 @@ const gameStatus = () => {
 //     return (cell.innerHTML = '')
 // }
 
-// populate board with mines
-const minePosition = []
 // populate numbers in correspondence to mines
 
 // check for win/lose
@@ -68,7 +57,7 @@ const gameOver = (click) => {
 
 // start game
 const startGame = () => {
-    gameStatus()
+    // gameStatus()
     makeBoard()
 }
 
