@@ -5,6 +5,9 @@ let randomIdx = {}
 let randomArr = []
 let gameRunning = false
 const numberOfMines = 10
+const board = []
+let rows = []
+let width = 10
 
 // make a board with random mines
 const makeBoard = () => {
@@ -22,7 +25,52 @@ const makeBoard = () => {
             grid.append(cell)
         }
     }
+
     randomizeClasses()
+    addToBoard()
+    for (let i = 0; i < board.length; i++) {
+        let total = 0
+        const isLeftEdge = i % width === 0
+        const isRightEdge = i % width === width - 1
+
+        if (board[i].classList.contains('safe')) {
+            if (i > 0 && !isLeftEdge && board[i - 1].classList.contains('mine'))
+                total++
+            if (
+                i > 9 &&
+                !isRightEdge &&
+                board[i + 1 - width].classList.contains('mine')
+            )
+                total++
+            if (i > 10 && board[i - width].classList.contains('mine')) total++
+            if (
+                i > 11 &&
+                !isLeftEdge &&
+                board[i - 1 - width].classList.contains('mine')
+            )
+                total++
+            if (
+                i < 98 &&
+                !isRightEdge &&
+                board[i + 1].classList.contains('mine')
+            )
+                total++
+            if (
+                i < 90 &&
+                !isLeftEdge &&
+                board[i - 1 + width].classList.contains('mine')
+            )
+                total++
+            if (
+                i < 88 &&
+                !isRightEdge &&
+                board[i + 1 + width].classList.contains('mine')
+            )
+                total++
+            if (i < 89 && board[i + width].classList.contains('mine')) total++
+            board[i].setAttribute('data', total)
+        }
+    }
 }
 const clickedCell = (e) => {
     revealCell(e)
@@ -50,7 +98,13 @@ const randomizeClasses = () => {
     }
 }
 
-// reveal cell & numbers of bomb near it
+const addToBoard = () => {
+    for (let i = 0; i < 100; i++) {
+        board.push(grid.children[i])
+    }
+    console.log(board)
+}
+// reveal cell & numbers of mine near it
 const revealCell = (e) => {
     if (
         gameRunning &&
