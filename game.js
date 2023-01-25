@@ -15,11 +15,8 @@ const makeBoard = () => {
         for (let y = 0; y < 10; y++) {
             // create div
             const cell = document.createElement('div')
-            // add id to div
-            // cell.id = x.toString() + '-' + y.toString()
             // be able to click board cells
             cell.addEventListener('click', click)
-
             // be able to add flags to cells on click
             cell.addEventListener('contextmenu', contextCell)
             grid.append(cell)
@@ -76,7 +73,6 @@ const makeBoard = () => {
 // depth first search
 const depthFirstSearch = (e) => {
     let currentId = e.id
-    // if (gameOver) return
     if (e.classList.contains('checked') || e.classList.contains('flag')) return
     if (e.classList.contains('mine')) {
         gameOver(e)
@@ -95,14 +91,10 @@ const depthFirstSearch = (e) => {
     }
     e.classList.add('checked')
 }
-// click functions
+// left click functions
 const click = (e, string) => {
-    // let currentId = e.target.id
-    // revealCell(e)
-    // gameOver(e)
     if (e.target == undefined) return depthFirstSearch(e)
     let currentId = e.target.id
-    // if (gameOver) return
     if (
         e.target.classList.contains('checked') ||
         e.target.classList.contains('flag')
@@ -125,6 +117,7 @@ const click = (e, string) => {
     }
     e.target.classList.add('checked')
 }
+// right click functions
 const contextCell = (e) => {
     e.preventDefault()
     toggleFlag(e)
@@ -196,12 +189,10 @@ function checkBoard(currentId) {
     const isLeftEdge = currentId % width === 0
     const isRightEdge = currentId % width === width - 1
     setTimeout(() => {
-        console.log(currentId)
         if (currentId > 0 && !isLeftEdge) {
             // const newId = board[parseInt(currentId) - 1].id
             const newId = +currentId - 1
             const newBoard = document.getElementById(newId)
-            // console.log(newBoard)
             click(newBoard, 'one')
         }
         if (currentId > 9 && !isRightEdge) {
@@ -241,7 +232,6 @@ function checkBoard(currentId) {
             click(newBoard)
         }
         if (currentId < 89) {
-            // const newId = board[parseInt(currentId) + width].id
             const newId = +currentId + width
             const newBoard = document.getElementById(newId)
             click(newBoard)
@@ -250,9 +240,28 @@ function checkBoard(currentId) {
 }
 
 // check win
-// const checkWin = () => {
-//     if
-// }
+const checkWin = (e) => {
+    if (e.target.classList.contains('mine')) return
+    if (
+        e.target.classList.contains('safe') ||
+        (e.target.classList.contains('safe') &&
+            e.target.classList.contains('one')) ||
+        (e.target.classList.contains('safe') &&
+            e.target.classList.contains('two')) ||
+        (e.target.classList.contains('safe') &&
+            e.target.classList.contains('three')) ||
+        (e.target.classList.contains('safe') &&
+            e.target.classList.contains('four'))
+    ) {
+        gameRunning = false
+        statusText.innerText = `You avoided the mines! You Win!`
+        for (let i = 0; i < grid.children.length; i++) {
+            if (grid.children[i].classList.contains('mine')) {
+                grid.children[i].classList.add('show')
+            }
+        }
+    }
+}
 
 // start game
 const startGame = () => {
