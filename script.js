@@ -249,10 +249,10 @@ function checkBoard(currentId) {
     }, 10)
 }
 
-// check win 
-const checkWin = () => {
-    if
-}
+// check win
+// const checkWin = () => {
+//     if
+// }
 
 // start game
 const startGame = () => {
