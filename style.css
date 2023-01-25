@@ -65,3 +65,18 @@ div:hover {
 .reveal {
     background-color: white;
 }
+.checked {
+    background-color: white;
+}
+.one {
+    color: green;
+}
+.two {
+    color: blue;
+}
+.three {
+    color: orangered;
+}
+.four {
+    color: red;
+}

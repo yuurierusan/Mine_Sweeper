@@ -16,9 +16,9 @@ const makeBoard = () => {
             // create div
             const cell = document.createElement('div')
             // add id to div
-            cell.id = x.toString() + '-' + y.toString()
+            // cell.id = x.toString() + '-' + y.toString()
             // be able to click board cells
-            cell.addEventListener('click', clickedCell)
+            cell.addEventListener('click', click)
 
             // be able to add flags to cells on click
             cell.addEventListener('contextmenu', contextCell)
@@ -75,10 +75,33 @@ const makeBoard = () => {
 }
 
 // click functions
-const clickedCell = (e) => {
+const click = (e) => {
+    // let currentId = e.target.id
+    // revealCell(e)
+    // gameOver(e)
     let currentId = e.target.id
-    revealCell(e)
-    gameOver(e)
+    // if (gameOver) return
+    if (
+        e.target.classList.contains('checked') ||
+        e.target.classList.contains('flag')
+    )
+        return
+    if (e.target.classList.contains('mine')) {
+        gameOver(e)
+    } else {
+        let total = e.target.getAttribute('data')
+        if (total != 0) {
+            e.target.classList.add('checked')
+            if (total == 1) e.target.classList.add('one')
+            if (total == 2) e.target.classList.add('two')
+            if (total == 3) e.target.classList.add('three')
+            if (total == 4) e.target.classList.add('four')
+            e.target.innerHTML = total
+            return
+        }
+        checkBoard(currentId)
+    }
+    e.target.classList.add('checked')
 }
 const contextCell = (e) => {
     e.preventDefault()
@@ -105,9 +128,9 @@ const randomizeClasses = () => {
 
 const addToBoard = () => {
     for (let i = 0; i < 100; i++) {
+        grid.children[i].id = i
         board.push(grid.children[i])
     }
-    console.log(board)
 }
 // reveal cell & numbers of mine near it
 const revealCell = (e) => {
@@ -146,16 +169,63 @@ const gameOver = (e) => {
     }
 }
 
-// check for win
-
-// // status text
-// // const gameStatus = () => {
-// //     document.querySelector('#mines').innerHTML = numberOfMines
-// // }
-
-// populate numbers in correspondence to mines
-
-// reset button
+// depth first search function
+function checkBoard(currentId) {
+    const isLeftEdge = currentId % width === 0
+    const isRightEdge = currentId % width === width - 1
+    setTimeout(() => {
+        console.log(currentId)
+        if (currentId > 0 && !isLeftEdge) {
+            // const newId = board[parseInt(currentId) - 1].id
+            const newId = +currentId - 1
+            const newBoard = document.getElementById(newId)
+            console.log(newBoard)
+            click(newBoard)
+        }
+        if (currentId > 9 && !isRightEdge) {
+            // const newId = board[parseInt(currentId) + 1 - width].id
+            const newId = +currentId + 1 - width
+            const newBoard = document.getElementById(newId)
+            click(newBoard)
+        }
+        if (currentId > 10) {
+            // const newId = board[parseInt(currentId - width)].id
+            const newId = +currentId - width
+            const newBoard = document.getElementById(newId)
+            click(newBoard)
+        }
+        if (currentId > 11 && !isLeftEdge) {
+            // const newId = board[parseInt(currentId) - 1 - width].id
+            const newId = +currentId - 1 - width
+            const newBoard = document.getElementById(newId)
+            click(newBoard)
+        }
+        if (currentId < 98 && !isRightEdge) {
+            // const newId = board[parseInt(currentId) + 1].id
+            const newId = +currentId + 1
+            const newBoard = document.getElementById(newId)
+            click(newBoard)
+        }
+        if (currentId < 90 && !isLeftEdge) {
+            // const newId = board[parseInt(currentId) - 1 + width].id
+            const newId = +currentId - 1 + width
+            const newBoard = document.getElementById(newId)
+            click(newBoard)
+        }
+        if (currentId < 88 && !isRightEdge) {
+            // const newId = board[parseInt(currentId) + 1 + width].id
+            const newId = +currentId + 1 + width
+            const newBoard = document.getElementById(newId)
+            click(newBoard)
+        }
+        if (currentId < 89) {
+            // const newId = board[parseInt(currentId) + width].id
+            const newId = +currentId + width
+            const newBoard = document.getElementById(newId)
+            click(newBoard)
+        }
+    }, 10)
+}
 
 // start game
 const startGame = () => {
