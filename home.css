@@ -1,0 +1,22 @@
+/* css reset */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Press Start 2P', cursive;
+}
+
+h2,
+h4 {
+    font-family: cursive;
+}
+
+p {
+    font-family: 'Bebas Neue', cursive;
+}
