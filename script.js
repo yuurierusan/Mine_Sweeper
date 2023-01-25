@@ -73,12 +73,34 @@ const makeBoard = () => {
         }
     }
 }
-
+// depth first search
+function depthFirstSearch(e) {
+    let currentId = e.id
+    // if (gameOver) return
+    if (e.classList.contains('checked') || e.classList.contains('flag')) return
+    if (e.classList.contains('mine')) {
+        gameOver(e)
+    } else {
+        let total = e.getAttribute('data')
+        if (total != 0) {
+            e.classList.add('checked')
+            if (total == 1) e.classList.add('one')
+            if (total == 2) e.classList.add('two')
+            if (total == 3) e.classList.add('three')
+            if (total == 4) e.classList.add('four')
+            e.innerHTML = total
+            return
+        }
+        checkBoard(currentId)
+    }
+    e.classList.add('checked')
+}
 // click functions
-const click = (e) => {
+const click = (e, string) => {
     // let currentId = e.target.id
     // revealCell(e)
     // gameOver(e)
+    if (e.target == undefined) return depthFirstSearch(e)
     let currentId = e.target.id
     // if (gameOver) return
     if (
@@ -179,8 +201,8 @@ function checkBoard(currentId) {
             // const newId = board[parseInt(currentId) - 1].id
             const newId = +currentId - 1
             const newBoard = document.getElementById(newId)
-            console.log(newBoard)
-            click(newBoard)
+            // console.log(newBoard)
+            click(newBoard, 'one')
         }
         if (currentId > 9 && !isRightEdge) {
             // const newId = board[parseInt(currentId) + 1 - width].id
@@ -225,6 +247,11 @@ function checkBoard(currentId) {
             click(newBoard)
         }
     }, 10)
+}
+
+// check win 
+const checkWin = () => {
+    if
 }
 
 // start game
