@@ -28,6 +28,7 @@ const makeBoard = () => {
 
     randomizeClasses()
     addToBoard()
+    // stack overflow code for adding data points
     for (let i = 0; i < board.length; i++) {
         let total = 0
         const isLeftEdge = i % width === 0
@@ -72,7 +73,10 @@ const makeBoard = () => {
         }
     }
 }
+
+// click functions
 const clickedCell = (e) => {
+    let currentId = e.target.id
     revealCell(e)
     gameOver(e)
 }
@@ -80,6 +84,7 @@ const contextCell = (e) => {
     e.preventDefault()
     toggleFlag(e)
 }
+
 // add classes to div of mine or safe
 const randomizeClasses = () => {
     while (true) {
