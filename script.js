@@ -3,10 +3,10 @@ const statusText = document.querySelector('.status')
 const grid = document.querySelector('.grid')
 let randomIdx = {}
 let randomArr = []
-let gameRunning = false
-const numberOfMines = 10
 const board = []
 let rows = []
+let gameRunning = false
+const numberOfMines = 10
 let width = 10
 
 // make a board with random mines
@@ -74,7 +74,7 @@ const makeBoard = () => {
     }
 }
 // depth first search
-function depthFirstSearch(e) {
+const depthFirstSearch = (e) => {
     let currentId = e.id
     // if (gameOver) return
     if (e.classList.contains('checked') || e.classList.contains('flag')) return
