@@ -21,7 +21,7 @@ const makeBoard = () => {
     randomizeClasses()
 }
 const clickedCell = (e) => {
-    // console.log(e.target.id)
+    gameOver(e)
 }
 const contextCell = (e) => {
     e.preventDefault()
@@ -45,6 +45,37 @@ const randomizeClasses = () => {
     }
 }
 
+// flag function
+const toggleFlag = (e) => {
+    if (e.target.classList.contains('flag')) {
+        return e.target.classList.remove('flag')
+    }
+    return e.target.classList.add('flag')
+}
+
+// check for lose
+const gameOver = (e) => {
+    const statusText = document.querySelector('.status')
+    if (
+        e.target.classList.contains('mine') &&
+        !e.target.classList.contains('flag')
+    ) {
+        statusText.innerText = `You hit a mine! Game Over!`
+        for (let i = 0; i < grid.children.length; i++) {
+            if (grid.children[i].classList.contains('mine')) {
+                grid.children[i].classList.add('show')
+            }
+        }
+    }
+}
+
+// if you hit mine it reveals
+const mineHider = () => {}
+
+// check for win
+
+// click cell and
+
 // status text
 // const numberOfMines = 10
 // const statusText = ``
@@ -52,23 +83,7 @@ const randomizeClasses = () => {
 //     document.querySelector('#mines').innerHTML = numberOfMines
 // }
 
-// flag function
-const toggleFlag = (e) => {
-    console.log(e.target)
-    if (e.target.classList.contains('flag')) {
-        return e.target.classList.remove('flag')
-    }
-    return e.target.classList.add('flag')
-}
-
-// const flag = document
-//     .querySelector('#cell', toggleFlag)
-//     .addEventListener('contextmenu')
-
 // populate numbers in correspondence to mines
-
-// check for win/lose
-const gameOver = (click) => {}
 
 // reset button
 

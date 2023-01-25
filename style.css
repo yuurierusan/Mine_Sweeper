@@ -50,11 +50,11 @@ div:hover {
 }
 
 /* tile status */
-.mine::before {
-    content: '💣';
+.mine {
+    background-color: none;
 }
-.hide {
-    background-color: darkgray;
+.show::before {
+    content: '💣';
 }
 .flag::before {
     content: '🚩';
