@@ -49,6 +49,16 @@ div:hover {
     background-color: rgba(0, 0, 0, 0.3);
 }
 
+/* tile status */
 .mine::before {
     content: '💣';
+}
+.hide {
+    background-color: darkgray;
+}
+.flag::before {
+    content: '🚩';
+}
+.number {
+    background-color: none;
 }

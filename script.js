@@ -1,18 +1,34 @@
+// variables
 const grid = document.querySelector('.grid')
 let randomIdx = {}
 let randomArr = []
-function makeBoard() {
+// make a board with random mines
+const makeBoard = () => {
     for (let x = 0; x < 10; x++) {
         for (let y = 0; y < 10; y++) {
+            // create div
             const cell = document.createElement('div')
+            // add id to div
             cell.id = x.toString() + '-' + y.toString()
+            // be able to click board cells
+            cell.addEventListener('click', clickedCell)
+
+            // be able to add flags to cells on click
+            cell.addEventListener('contextmenu', contextCell)
             grid.append(cell)
         }
     }
     randomizeClasses()
 }
-
-function randomizeClasses() {
+const clickedCell = (e) => {
+    // console.log(e.target.id)
+}
+const contextCell = (e) => {
+    e.preventDefault()
+    toggleFlag(e)
+}
+// add classes to div of mine or safe
+const randomizeClasses = () => {
     while (true) {
         const random = Math.floor(Math.random() * 100)
         randomIdx[random] = true
@@ -28,36 +44,37 @@ function randomizeClasses() {
         }
     }
 }
-// status
-const numberOfMines = 10
-const statusText = ``
-const gameStatus = () => {
-    document.querySelector('#mines').innerHTML = numberOfMines
+
+// status text
+// const numberOfMines = 10
+// const statusText = ``
+// const gameStatus = () => {
+//     document.querySelector('#mines').innerHTML = numberOfMines
+// }
+
+// flag function
+const toggleFlag = (e) => {
+    console.log(e.target)
+    if (e.target.classList.contains('flag')) {
+        return e.target.classList.remove('flag')
+    }
+    return e.target.classList.add('flag')
 }
 
-// be able to click board cells
-
-// be able to add flags to cells on click
-// const cell = this
-// cell.addEventListener('contextmenu', (toggleFlag) => {})
-// oncontextmenu = (toggleFlag) => {
-//     if (cell.innerHTML === '') return (cell.innerHTML = '🚩')
-//     return (cell.innerHTML = '')
-// }
+// const flag = document
+//     .querySelector('#cell', toggleFlag)
+//     .addEventListener('contextmenu')
 
 // populate numbers in correspondence to mines
 
 // check for win/lose
-const gameOver = (click) => {
-    if (cell.classList.contains('mine'))
-        return (statusText.innerHTML = `You hit a mine! Game Over!`)
-}
+const gameOver = (click) => {}
 
 // reset button
 
 // start game
 const startGame = () => {
-    // gameStatus()
+    // statusText
     makeBoard()
 }
 
