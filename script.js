@@ -1,7 +1,11 @@
 // variables
+const statusText = document.querySelector('.status')
 const grid = document.querySelector('.grid')
 let randomIdx = {}
 let randomArr = []
+let gameRunning = false
+const numberOfMines = 10
+
 // make a board with random mines
 const makeBoard = () => {
     for (let x = 0; x < 10; x++) {
@@ -21,6 +25,7 @@ const makeBoard = () => {
     randomizeClasses()
 }
 const clickedCell = (e) => {
+    revealCell(e)
     gameOver(e)
 }
 const contextCell = (e) => {
@@ -45,21 +50,34 @@ const randomizeClasses = () => {
     }
 }
 
+// reveal cell & numbers of bomb near it
+const revealCell = (e) => {
+    if (
+        gameRunning &&
+        e.target.classList.contains('safe') &&
+        !e.target.classList.contains('flag')
+    ) {
+        return e.target.classList.add('reveal')
+    }
+}
 // flag function
 const toggleFlag = (e) => {
-    if (e.target.classList.contains('flag')) {
+    if (gameRunning && e.target.classList.contains('flag')) {
         return e.target.classList.remove('flag')
     }
-    return e.target.classList.add('flag')
+    if (gameRunning) {
+        return e.target.classList.add('flag')
+    }
 }
 
 // check for lose
 const gameOver = (e) => {
-    const statusText = document.querySelector('.status')
+    // checks if a flag has been placed
     if (
         e.target.classList.contains('mine') &&
         !e.target.classList.contains('flag')
     ) {
+        gameRunning = false
         statusText.innerText = `You hit a mine! Game Over!`
         for (let i = 0; i < grid.children.length; i++) {
             if (grid.children[i].classList.contains('mine')) {
@@ -69,19 +87,12 @@ const gameOver = (e) => {
     }
 }
 
-// if you hit mine it reveals
-const mineHider = () => {}
-
 // check for win
 
-// click cell and
-
-// status text
-// const numberOfMines = 10
-// const statusText = ``
-// const gameStatus = () => {
-//     document.querySelector('#mines').innerHTML = numberOfMines
-// }
+// // status text
+// // const gameStatus = () => {
+// //     document.querySelector('#mines').innerHTML = numberOfMines
+// // }
 
 // populate numbers in correspondence to mines
 
@@ -89,7 +100,8 @@ const mineHider = () => {}
 
 // start game
 const startGame = () => {
-    // statusText
+    gameRunning = true
+    statusText.innerText = `Mines :${numberOfMines}`
     makeBoard()
 }
 
