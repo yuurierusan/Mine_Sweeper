@@ -77,3 +77,9 @@
 ## Depth First Search Research: [Dev](https://dev.to/akhilpokle/number-of-islands-implementing-depth-first-search-with-the-help-of-minesweeper-507g)
 
 ## Set Attributes: [Stack Overflow](https://stackoverflow.com/questions/14860094/set-data-attribute-on-div-with-js)
+
+## How to Play: [WikiHow](https://www.wikihow.com/Play-Minesweeper)
+
+## Logic of Minesweeper [OpenGenus](https://iq.opengenus.org/minesweeper-game-using-js/)
+
+# Fonts and Buttons [Google Fonts](https://fonts.google.com/)
