@@ -52,9 +52,10 @@
 -   [x] Include 2 event handlers
 -   [x] Theme around the original Minesweeper i played years ago
 -   [x] Have a status text showing time since start
--   [x] A grid/flexbox with clickable tiles
+-   [x] A grid/flex box with clickable tiles
 -   [x] Have numbers appear in the grid tiles in relation to how far the bomb is from the players choice
 -   [x] Have tiles change color or image depending on which tile is clicked and if its a bomb or a number
+-   [x] Have a win and los check as well as status text to show if you have won or lost the game.
 
 ---
 
