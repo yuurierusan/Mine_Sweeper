@@ -40,7 +40,7 @@
 
 ### **_Screenshots_**
 
-![Images](homepage.png)
+![Image](homepage.png)
 ![Image](gamepage.png)
 
 ---
