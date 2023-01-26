@@ -12,12 +12,14 @@ body {
 
 /*title styling */
 .title {
+    color: #black;
     padding: 25px;
     font-family: 'Press Start 2P', cursive;
 }
 
 /* mine bomb status text */
 .status {
+    color: white;
     padding: 5px 0 20px;
 }
 
@@ -83,8 +85,10 @@ div:hover {
 }
 /* buttons */
 .material-symbols-rounded {
+    color: white;
     cursor: pointer;
 }
 .material-symbols-sharp {
+    color: white;
     cursor: pointer;
 }
