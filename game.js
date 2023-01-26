@@ -8,6 +8,7 @@ let rows = []
 let gameRunning = false
 const numberOfMines = 10
 let width = 10
+let flagTotal = 0
 
 // make a board with random mines
 const makeBoard = () => {
@@ -85,11 +86,13 @@ const depthFirstSearch = (e) => {
             if (total == 3) e.classList.add('three')
             if (total == 4) e.classList.add('four')
             e.innerHTML = total
+            checkWin()
             return
         }
         checkBoard(currentId)
     }
     e.classList.add('checked')
+    checkWin()
 }
 // left click functions
 const click = (e, string) => {
@@ -111,11 +114,13 @@ const click = (e, string) => {
             if (total == 3) e.target.classList.add('three')
             if (total == 4) e.target.classList.add('four')
             e.target.innerHTML = total
+            checkWin()
             return
         }
         checkBoard(currentId)
     }
     e.target.classList.add('checked')
+    checkWin()
 }
 // right click functions
 const contextCell = (e) => {
@@ -160,9 +165,13 @@ const revealCell = (e) => {
 // flag function
 const toggleFlag = (e) => {
     if (gameRunning && e.target.classList.contains('flag')) {
+        flagTotal--
+        checkWin()
         return e.target.classList.remove('flag')
     }
     if (gameRunning) {
+        flagTotal++
+        checkWin()
         return e.target.classList.add('flag')
     }
 }
@@ -185,7 +194,7 @@ const gameOver = (e) => {
 }
 
 // depth first search function
-function checkBoard(currentId) {
+const checkBoard = (currentId) => {
     const isLeftEdge = currentId % width === 0
     const isRightEdge = currentId % width === width - 1
     setTimeout(() => {
@@ -240,19 +249,14 @@ function checkBoard(currentId) {
 }
 
 // check win
-const checkWin = (e) => {
-    if (e.target.classList.contains('mine')) return
-    if (
-        e.target.classList.contains('safe') ||
-        (e.target.classList.contains('safe') &&
-            e.target.classList.contains('one')) ||
-        (e.target.classList.contains('safe') &&
-            e.target.classList.contains('two')) ||
-        (e.target.classList.contains('safe') &&
-            e.target.classList.contains('three')) ||
-        (e.target.classList.contains('safe') &&
-            e.target.classList.contains('four'))
-    ) {
+const checkWin = () => {
+    let counter = 0
+    for (let i = 0; i < grid.children.length; i++) {
+        if (grid.children[i].classList.contains('checked')) {
+            counter++
+        }
+    }
+    if (flagTotal === 10 && counter === 90) {
         gameRunning = false
         statusText.innerText = `You avoided the mines! You Win!`
         for (let i = 0; i < grid.children.length; i++) {
