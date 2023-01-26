@@ -81,3 +81,10 @@ div:hover {
 .four {
     color: red;
 }
+/* buttons */
+.material-symbols-rounded {
+    cursor: pointer;
+}
+.material-symbols-sharp {
+    cursor: pointer;
+}

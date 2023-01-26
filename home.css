@@ -20,3 +20,8 @@ h4 {
 p {
     font-family: 'Bebas Neue', cursive;
 }
+
+/* buttons */
+.material-symbols-outlined {
+    cursor: pointer;
+}
