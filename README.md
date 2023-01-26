@@ -32,7 +32,7 @@
 
 ##### Once the game is complete you'll be able to access and play it [here](mine_sweeper.surge.sh).
 
-##### A Trello board was used to keep track of development progress and can be viewed [here](https://trello.com/invite/b/Mj5DHgBr/ATTIb4dc15ec67bb081751fae57d9b1b95890E937067/minesweeper).
+##### A Trello board was used to keep track of development progress and can be viewed [here](https://trello.com/invite/b/Mj5DHgBr/ATTIb4dc15ec67bb081751fae57d9b1b95890E937067/mine-sweeper).
 
 ##### The project itself was deployed and can be viewed [here](https://github.com/yuurierusan/Mine_Sweeper).
 
@@ -40,24 +40,27 @@
 
 ### **_Screenshots_**
 
-![Image](https://cdn.mos.cms.futurecdn.net/f873f2282e16faeebdb4a09e2f3cef32-1920-80.jpg.webp)
+![Images](homepage.png)
+![Image](gamepage.png)
 
 ---
 
 ### **_Task List_**
 
--   [ ] Build a browser-based game utilizing HTML/CSS/JavaScript
--   [ ] Include 2 HTML pages
--   [ ] Include 2 event handlers
--   [ ] Theme around the original Minesweeper i played years ago
--   [ ] Have a status text showing time since start
--   [ ] A grid/flexbox with clickable tiles
--   [ ] Have numbers appear in the grid tiles in relation to how far the bomb is from the players choice
--   [ ] Have tiles change color depending on which tile is clicked and if its a bomb or a number
+-   [x] Build a browser-based game utilizing HTML/CSS/JavaScript
+-   [x] Include 2 HTML pages
+-   [x] Include 2 event handlers
+-   [x] Theme around the original Minesweeper i played years ago
+-   [x] Have a status text showing time since start
+-   [x] A grid/flexbox with clickable tiles
+-   [x] Have numbers appear in the grid tiles in relation to how far the bomb is from the players choice
+-   [x] Have tiles change color depending on which tile is clicked and if its a bomb or a number
 
 ---
 
 ### **_Future Features_**
+
+-   TBA
 
 ---
 
@@ -65,8 +68,12 @@
 
 ## Markdown Guide: [General Assembly](https://github.com/yuurierusan/u1_hw_markdown)
 
-## Preview Images: [Future CDN](https://cdn.mos.cms.futurecdn.net/f873f2282e16faeebdb4a09e2f3cef32-1920-80.jpg.webp) | [Google Search](https://google.com)
+## Images: [Google Search](https://google.com)
 
 ## Task Manager: [Trello](https://trello.com/)
 
 ## Web Publishing: [Surge](https://surge.sh)
+
+## Depth First Search Research: [Dev](https://dev.to/akhilpokle/number-of-islands-implementing-depth-first-search-with-the-help-of-minesweeper-507g)
+
+## Set Attributes: [Stack Overflow](https://stackoverflow.com/questions/14860094/set-data-attribute-on-div-with-js)

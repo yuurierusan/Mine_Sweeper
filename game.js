@@ -26,7 +26,7 @@ const makeBoard = () => {
 
     randomizeClasses()
     addToBoard()
-    // stack overflow code for adding data points
+    // stack overflow code for getting total & adding data point
     for (let i = 0; i < board.length; i++) {
         let total = 0
         const isLeftEdge = i % width === 0
