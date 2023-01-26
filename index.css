@@ -5,20 +5,25 @@
 }
 
 body {
+    color: #ccc;
     text-align: center;
+    background-image: url('./win98.jpg');
 }
 
 h1 {
     font-family: 'Press Start 2P', cursive;
+    padding: 25px;
 }
 
 h2,
 h4 {
     font-family: cursive;
+    padding: 5px;
 }
 
-p {
+li {
     font-family: 'Bebas Neue', cursive;
+    padding: 5px;
 }
 
 /* buttons */
