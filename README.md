@@ -83,4 +83,4 @@
 
 ## Logic of Minesweeper [OpenGenus](https://iq.opengenus.org/minesweeper-game-using-js/)
 
-# Fonts and Buttons [Google Fonts](https://fonts.google.com/)
+## Fonts and Buttons [Google Fonts](https://fonts.google.com/)
