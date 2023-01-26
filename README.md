@@ -67,6 +67,8 @@
 
 ### **_Credits_**
 
+## Contributors: [People] Classmates, Teachers, TA's
+
 ## Markdown Guide: [General Assembly](https://github.com/yuurierusan/u1_hw_markdown)
 
 ## Images: [Google Search](https://google.com)
