@@ -67,7 +67,7 @@
 
 ### **_Credits_**
 
-## Contributors: [People] Classmates, Teachers, TA's
+## Contributors: [People] Classmates, Teachers, TA's (Mostly Manny)
 
 ## Markdown Guide: [General Assembly](https://github.com/yuurierusan/u1_hw_markdown)
 
