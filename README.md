@@ -12,7 +12,7 @@
 
 ### **_Description_**
 
-#### This project features a clone of the classic game Minesweeper. Mine sweeper is a logic-based computer game played with the task of locating a predetermined number of randomly-placed "mines" in as little time as possible. You click on squares & try to avoid squares with mines.
+#### This project features a clone of the classic game Minesweeper. Mine sweeper is a logic-based computer game played with the task of locating a predetermined number of randomly-placed "mines". You click on squares & try to avoid squares with mines.
 
 ---
 
