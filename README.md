@@ -30,7 +30,7 @@
 
 ### **_Getting Started_**
 
-##### Once the game is complete you'll be able to access and play it [here](mine_sweeper.surge.sh).
+##### Once the game is complete you'll be able to access and play it [here](https://mine_sweeper.surge.sh/).
 
 ##### A Trello board was used to keep track of development progress and can be viewed [here](https://trello.com/invite/b/Mj5DHgBr/ATTIb4dc15ec67bb081751fae57d9b1b95890E937067/mine-sweeper).
 
